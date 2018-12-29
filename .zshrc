@@ -6,6 +6,9 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 source $HOME/.zplug/init.zsh
 
+alias ls='ls --color=auto'
+alias rm='rm -i'
+
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # will run compinit -d "${ZPLUG_HOME}/zcompdump" at this line
