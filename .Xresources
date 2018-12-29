@@ -1,0 +1,45 @@
+UUXTerm*termName:	xterm-256color
+UXTerm*locale:	true
+UXTerm*selectToClipboard:	true
+UXTerm*faceName:	ShureTechMono Nerd Font 
+UXTerm*faceNameDoublesize: MyricaM M
+UXTerm*faceSize:	12
+
+!UXTerm.font: Shure Tech Mono Nerd Font Complete
+
+!TomorrowNightEighties
+UXTerm*Foreground:   #cccccc
+UXTerm*Background:   #2d2d2d
+UXTerm*cursorColor:  #aeafad
+
+! Black / Grey
+UXTerm*color0:       #000000
+UXTerm*color8:       #666666
+
+! Red / Bright Red
+UXTerm*color1:       #f2777a
+UXTerm*color9:       #ff3334
+
+! Green + Bright Green
+UXTerm*color2:       #99cc99
+UXTerm*color10:      #9ec400
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+UXTerm*color3:       #f99157
+UXTerm*color11:      #ffcc66
+
+! Blue + Bright Blue
+UXTerm*color4:       #6699cc
+UXTerm*color12:      #6699cc
+
+! Magenta (Purple) + Bright Magenta
+UXTerm*color5:       #cc99cc
+UXTerm*color13:      #b777e0
+
+! Cyan (Aqua) + Bright Cyan
+UXTerm*color6:       #66cccc
+UXTerm*color14:      #54ced6
+
+! Light Grey (Selection) + White (Current Line)
+UXTerm*color7:       #515151
+UXTerm*color15:      #393939
