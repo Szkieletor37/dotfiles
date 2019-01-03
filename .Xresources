@@ -1,7 +1,7 @@
 UUXTerm*termName:	xterm-256color
 UXTerm*locale:	true
 UXTerm*selectToClipboard:	true
-UXTerm*faceName:	ShureTechMono Nerd Font 
+UXTerm*faceName:	ShureTechMono Nerd Font:style=Regular
 UXTerm*faceNameDoublesize: MyricaM M
 UXTerm*faceSize:	12
 

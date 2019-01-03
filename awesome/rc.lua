@@ -48,7 +48,7 @@ end
 beautiful.init("/home/szkieletor/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "uxterm"
+terminal = "terminator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " - " .. editor
 
