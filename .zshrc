@@ -8,6 +8,7 @@ source $HOME/.zplug/init.zsh
 
 alias ls='ls --color=auto'
 alias rm='rm -i'
+alias vim='/usr/local/bin/vim'
 
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
