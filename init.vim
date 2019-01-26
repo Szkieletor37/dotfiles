@@ -44,3 +44,4 @@ endif
 "End dein Scripts-------------------------
 
 colorscheme Tomorrow-Night-Eighties
+highlight LineNr ctermfg=grey
