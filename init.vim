@@ -1,5 +1,10 @@
 set clipboard=unnamedplus
 set shiftwidth=2
+set number
+set relativenumber
+let mapleader = ","
+nnoremap <leader>ev :vsplit ~/dotfiles/init.vim<cr>
+nnoremap <leader>sv :source ~/dotfiles/init.vim<cr>
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
