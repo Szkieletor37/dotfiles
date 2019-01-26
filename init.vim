@@ -1,10 +1,22 @@
+"Option---------------------------------
 set clipboard=unnamedplus
 set shiftwidth=2
 set number
 set relativenumber
+"End Option-----------------------------
+
+"mapping---------------------------------
 let mapleader = ","
 nnoremap <leader>ev :vsplit ~/dotfiles/init.vim<cr>
 nnoremap <leader>sv :source ~/dotfiles/init.vim<cr>
+nnoremap <leader>' viw<esc>a'<esc>bi"<esc>lel
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>o o<esc>k
+nnoremap <leader>O O<esc>j
+nnoremap H ^
+nnoremap L $
+"End mapping------------------------------
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -43,5 +55,6 @@ endif
 
 "End dein Scripts-------------------------
 
+"Color------------------------------------
 colorscheme Tomorrow-Night-Eighties
 highlight LineNr ctermfg=grey
