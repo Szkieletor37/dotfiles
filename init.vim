@@ -23,15 +23,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/szkieletor/.vim/bundles/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/bundles/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/szkieletor/.vim/bundles')
-  call dein#begin('/home/szkieletor/.vim/bundles')
+if dein#load_state('$HOME/.vim/bundles')
+  call dein#begin('$HOME/.vim/bundles')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/szkieletor/.vim/bundles/repos/github.com/Shougo/dein.vim')
+  call dein#add('$HOME/.vim/bundles/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   call dein#add('Shougo/neosnippet-snippets')
