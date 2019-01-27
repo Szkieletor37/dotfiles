@@ -15,7 +15,14 @@ nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
 nnoremap H ^
 nnoremap L $
+nnoremap <leader>b :buffers<cr>:buffer<Space>
 "End mapping------------------------------
+
+"autocmd----------------------------------
+autocmd Filetype cpp nnoremap <buffer> <leader>c I//<esc>
+autocmd Filetype markdown set spell
+autocmd Filetype markdown set spelllang=en,cjk
+"End autocmd------------------------------
 
 "dein Scripts-----------------------------
 if &compatible
