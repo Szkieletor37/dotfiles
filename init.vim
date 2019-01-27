@@ -3,6 +3,7 @@ set clipboard=unnamedplus
 set shiftwidth=2
 set number
 set relativenumber
+set guicursor=
 "End Option-----------------------------
 
 "mapping---------------------------------
