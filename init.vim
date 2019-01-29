@@ -17,12 +17,35 @@ nnoremap <leader>O O<esc>j
 nnoremap H ^
 nnoremap L $
 nnoremap <leader>b :buffers<cr>:buffer<Space>
+inoremap jk <esc>
+inoremap <C-[> <nop>
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+onoremap in{ :<c-u>normal! f{vi{<cr>
+onoremap il{ :<c-u>normal! F}vi{<cr>
 "End mapping------------------------------
 
 "autocmd----------------------------------
-autocmd Filetype cpp nnoremap <buffer> <leader>c I//<esc>
-autocmd Filetype markdown set spell
-autocmd Filetype markdown set spelllang=en,cjk
+augroup filetype_cpp
+  autocmd!
+  autocmd FileType cpp nnoremap <buffer> <leader>c I//<esc>
+augroup END
+
+augroup filetype_md
+  autocmd!
+  autocmd FileType markdown set spell
+  autocmd FileType markdown set spelllang=en,cjk
+augroup END
+
+augroup filetype_py
+  autocmd!
+  autocmd FileType python :iabbrev <buffer> iff if:<left>
+augroup END
+
+augroup filetype_js
+  autocmd!
+  autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
+augroup END
 "End autocmd------------------------------
 
 "dein Scripts-----------------------------
