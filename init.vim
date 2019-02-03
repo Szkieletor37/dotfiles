@@ -1,12 +1,12 @@
-"Option---------------------------------
+"Basic Settings---------------------------------{{{
 set clipboard=unnamedplus
 set shiftwidth=2
 set number
 set relativenumber
 set guicursor=
-"End Option-----------------------------
+"-----------------------------}}}
 
-"mapping---------------------------------
+"Mappings---------------------------------{{{
 let mapleader = ","
 nnoremap <leader>ev :vsplit ~/dotfiles/init.vim<cr>
 nnoremap <leader>sv :source ~/dotfiles/init.vim<cr>
@@ -17,38 +17,52 @@ nnoremap <leader>O O<esc>j
 nnoremap H ^
 nnoremap L $
 nnoremap <leader>b :buffers<cr>:buffer<Space>
+inoremap <leader><c-u> <esc>bgUwea
 inoremap jk <esc>
 inoremap <C-[> <nop>
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
-"End mapping------------------------------
+"End mapping------------------------------}}}
 
-"autocmd----------------------------------
+"Filetype-Specifics----------------------------------
+"Filetype:vim{{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim nnoremap <buffer> <leader>c i"
+  autocmd FileType vim inoremap <buffer> <leader><cr> <c-O>x
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+"}}}
+"Filetype:cpp{{{
 augroup filetype_cpp
   autocmd!
   autocmd FileType cpp nnoremap <buffer> <leader>c I//<esc>
 augroup END
-
+"}}}
+"Filetype:md{{{
 augroup filetype_md
   autocmd!
   autocmd FileType markdown set spell
   autocmd FileType markdown set spelllang=en,cjk
 augroup END
-
+"}}}
+"Filetype:py{{{
 augroup filetype_py
   autocmd!
   autocmd FileType python :iabbrev <buffer> iff if:<left>
 augroup END
-
+"}}}
+"Filetype:js{{{
 augroup filetype_js
   autocmd!
   autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
 augroup END
-"End autocmd------------------------------
+"}}}
+"------------------------------
 
-"dein Scripts-----------------------------
+"dein Scripts-----------------------------{{{
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -88,4 +102,4 @@ endif
 
 "Color------------------------------------
 colorscheme Tomorrow-Night-Eighties
-highlight LineNr ctermfg=grey
+highlight LineNr ctermfg=grey"}}}
