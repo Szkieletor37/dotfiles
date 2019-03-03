@@ -58,6 +58,8 @@ augroup END
 augroup filetype_js
   autocmd!
   autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
+  autocmd FileType javascript nnoremap <buffer> <leader>c I//<esc>
+  autocmd BufNewFile *.js 0r ~/dotfiles/nvim/init_js.txt
 augroup END
 "}}}
 "------------------------------
