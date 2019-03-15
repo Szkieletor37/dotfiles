@@ -4,19 +4,44 @@ set shiftwidth=2
 set number
 set relativenumber
 set guicursor=
+set hlsearch
+set incsearch
 "-----------------------------}}}
 
 "Mappings---------------------------------{{{
 let mapleader = ","
+"edit init.vim quickly
 nnoremap <leader>ev :vsplit ~/dotfiles/init.vim<cr>
+"apply init.vim quickly
 nnoremap <leader>sv :source ~/dotfiles/init.vim<cr>
-nnoremap <leader>' viw<esc>a'<esc>bi"<esc>lel
+"enclosed a word by singlequote
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+"enclosed a word by doublequote
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+"insert a line right below
 nnoremap <leader>o o<esc>k
+"insert a line right above
 nnoremap <leader>O O<esc>j
+"jump the first of the line
 nnoremap H ^
+"jump the end of the line
 nnoremap L $
+"choose a buffer quickly
 nnoremap <leader>b :buffers<cr>:buffer<Space>
+"open the buffer used right before the current one
+nnoremap <leader>p :execute "leftabove split" . bufname("#")<cr>
+"highlight trailing whitespace
+nnoremap <leader>w :match Error /\S\zs\s\+$/<cr>
+"unhighlight trailing whitespace
+nnoremap <leader>wn :match NormalNC /\S\zs\s\+$/<cr> 
+"remove trailing whitespace
+nnoremap <leader>W :%s/\s\+$//e<cr>
+"search in very magic mode automatically
+nnoremap / /\v
+"toggle highlighting items from the last search
+nnoremap <leader>th :set hlsearch!<cr>
+"to grep for the word under the cursor
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 inoremap <leader><c-u> <esc>bgUwea
 inoremap jk <esc>
 inoremap <C-[> <nop>
@@ -24,6 +49,7 @@ onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
+vnoremap jk <esc>
 "End mapping------------------------------}}}
 
 "Filetype-Specifics----------------------------------
