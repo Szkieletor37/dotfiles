@@ -41,7 +41,7 @@ nnoremap / /\v
 "toggle highlighting items from the last search
 nnoremap <leader>th :set hlsearch!<cr>
 "to grep for the word under the cursor
-nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+"nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 inoremap <leader><c-u> <esc>bgUwea
 inoremap jk <esc>
 inoremap <C-[> <nop>
@@ -110,8 +110,8 @@ if dein#load_state('$HOME/.vim/bundles')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('qnighy/satysfi.vim')
-  call dein#add('chriskempson/vim-tomorrow-theme')
   call dein#add('w0rp/ale')
+  call dein#add('w0ng/vim-hybrid')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -129,5 +129,6 @@ endif
 "End dein Scripts-------------------------
 
 "Color------------------------------------
-colorscheme Tomorrow-Night-Eighties
+set background=dark
+colorscheme hybrid
 highlight LineNr ctermfg=grey"}}}
