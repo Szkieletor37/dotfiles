@@ -1,15 +1,41 @@
 "Basic Settings---------------------------------{{{
 set clipboard=unnamedplus
-set shiftwidth=2
 set number
 set relativenumber
 set guicursor=
+set display=lastline
+"set height of Pop Up Menu
+set pumheight=10
+set showmatch
+set matchtime=1
+set cursorline
+"command line completion
+set wildmode=list:longest
+
+"Tab----------------------{{{
+set list listchars=tab:\▸\-
+set tabstop=2
+set shiftwidth=2
+"------------------------}}}
+"Search-------------------------{{{
+"ignore case in a pattern
+set ignorecase
+"case-sensitive if a pattern includes capital
+set smartcase
 set hlsearch
 set incsearch
+"Searches wrap around the end of the file
+set wrapscan
+"-----------------------------}}}
 "-----------------------------}}}
 
 "Mappings---------------------------------{{{
 let mapleader = ","
+"map Y to yank until the end of line
+nnoremap Y y$
+"incriment, decriment
+nnoremap + <C-a>
+nnoremap - <C-x>
 "edit init.vim quickly
 nnoremap <leader>ev :vsplit ~/dotfiles/init.vim<cr>
 "apply init.vim quickly
@@ -51,6 +77,13 @@ onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
 vnoremap jk <esc>
 "End mapping------------------------------}}}
+
+"Autocmds--------------------------------------{{{
+augroup swapchoice-readonly
+  autocmd!
+  autocmd SwapExists * let v:swapchoice = 'o'
+augroup END
+"----------------------------------------------}}}
 
 "Filetype-Specifics----------------------------------
 "Filetype:vim{{{
