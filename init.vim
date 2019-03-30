@@ -94,19 +94,6 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 "}}}
-"Filetype:cpp{{{
-augroup filetype_cpp
-  autocmd!
-  autocmd FileType cpp nnoremap <buffer> <leader>c I//<esc>
-augroup END
-"}}}
-"Filetype:md{{{
-augroup filetype_md
-  autocmd!
-  autocmd FileType markdown set spell
-  autocmd FileType markdown set spelllang=en,cjk
-augroup END
-"}}}
 "Filetype:py{{{
 augroup filetype_py
   autocmd!
@@ -145,6 +132,10 @@ if dein#load_state('$HOME/.vim/bundles')
   call dein#add('qnighy/satysfi.vim')
   call dein#add('w0rp/ale')
   call dein#add('w0ng/vim-hybrid')
+	call dein#add('plasticboy/vim-markdown')
+	call dein#add('tyru/open-browser.vim')
+	call dein#add('thinca/vim-quickrun')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -167,7 +158,15 @@ colorscheme hybrid
 highlight LineNr ctermfg=grey
 "}}}
 
+"ale
 let g:ale_linters = {
 			\ 'php' : ['phan'],
 			\}
+
+"quickrun
+let g:quickrun_config = {}
+let g:quickrun_config['markdown'] = {
+			\ 'outputter': 'browser'
+			\ }
 "}}}
+
