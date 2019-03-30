@@ -161,7 +161,13 @@ endif
 
 "End dein Scripts-------------------------
 
-"Color------------------------------------
+"Color------------------------------------{{{
 set background=dark
 colorscheme hybrid
-highlight LineNr ctermfg=grey"}}}
+highlight LineNr ctermfg=grey
+"}}}
+
+let g:ale_linters = {
+			\ 'php' : ['phan'],
+			\}
+"}}}
