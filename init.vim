@@ -1,4 +1,4 @@
-"basic Settings---------------------------------{{{
+"Basic Settings---------------------------------{{{
 set clipboard=unnamedplus
 set number
 set relativenumber
@@ -13,7 +13,7 @@ set cursorline
 set wildmode=list:longest
 
 "Tab----------------------{{{
-set list listchars=tab:\▸\-
+"set list listchars=tab:\▸\-
 set tabstop=2
 set shiftwidth=2
 "------------------------}}}
@@ -85,6 +85,87 @@ augroup swapchoice-readonly
 augroup END
 "----------------------------------------------}}}
 
+"Vundle.vim-----------------------------------{{{
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'w0rp/ale'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tyru/open-browser.vim'
+Plugin 'thinca/vim-quickrun'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"}}}
+
+"General Settings, must be put after Vundle.vim{{{
+filetype on
+filetype plugin indent on
+
+set background=dark
+colorscheme hybrid
+highlight LineNr ctermfg=grey
+"}}}
+"
+"Plugins settings{{{
+"ale{{{
+let g:ale_linters = {
+\ 'php' : ['phan'],
+\}
+"}}}
+"quickrun{{{
+let g:quickrun_config = {
+\ 'markdown': {
+\ 'outputter': 'browser'
+\ },
+\	'kyoupro': {
+\ 'command': '/usr/bin/g++',
+\ 'cmdopt': '-std=c++14 -g -Wall',
+\ },
+\}
+
+"}}}
+"}}}
+
 "Filetype-Specifics----------------------------------
 "Filetype:vim{{{
 augroup filetype_vim
@@ -109,64 +190,4 @@ augroup filetype_js
 augroup END
 "}}}
 "------------------------------
-
-"dein Scripts-----------------------------{{{
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=$HOME/.vim/bundles/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('$HOME/.vim/bundles')
-  call dein#begin('$HOME/.vim/bundles')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('$HOME/.vim/bundles/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here like this:
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('qnighy/satysfi.vim')
-  call dein#add('w0rp/ale')
-  call dein#add('w0ng/vim-hybrid')
-	call dein#add('plasticboy/vim-markdown')
-	call dein#add('tyru/open-browser.vim')
-	call dein#add('thinca/vim-quickrun')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-"End dein Scripts-------------------------
-
-"Color------------------------------------{{{
-set background=dark
-colorscheme hybrid
-highlight LineNr ctermfg=grey
-"}}}
-
-"ale
-let g:ale_linters = {
-			\ 'php' : ['phan'],
-			\}
-
-"quickrun
-let g:quickrun_config = {}
-let g:quickrun_config['markdown'] = {
-			\ 'outputter': 'browser'
-			\ }
-"}}}
 
