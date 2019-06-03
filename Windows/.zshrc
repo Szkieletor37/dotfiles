@@ -4,9 +4,17 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+#require vcxsrv
+export DISPLAY=localhost:0.0
+
 source $HOME/.zplug/init.zsh
 
-alias ls='ls --color=auto'
+LS_COLORS=$LS_COLORS:'ex=36:' ; export LS_COLORS
+export LS_OPTIONS='--color=auto'
+eval "$(dircolors ~/.dircolors)"
+alias ls='ls -a $LS_OPTIONS'
+
 alias rm='rm -i'
 alias vim='/usr/local/bin/vim'
 
@@ -92,3 +100,5 @@ zplug load
 test -r /home/szkieletor/.opam/opam-init/init.zsh && . /home/szkieletor/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+#sudo sh -c "echo 'nameserver 8.8.8.8' >> /etc/resolv.conf"

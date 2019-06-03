@@ -13,9 +13,11 @@ set cursorline
 set wildmode=list:longest
 
 "Tab----------------------{{{
-"set list listchars=tab:\▸\-
+set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«
+set list
 set tabstop=2
 set shiftwidth=2
+
 "------------------------}}}
 "Search-------------------------{{{
 "ignore case in a pattern
@@ -37,9 +39,9 @@ nnoremap Y y$
 nnoremap + <C-a>
 nnoremap - <C-x>
 "edit init.vim quickly
-nnoremap <leader>ev :vsplit ~/dotfiles/init.vim<cr>
+nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 "apply init.vim quickly
-nnoremap <leader>sv :source ~/dotfiles/init.vim<cr>
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 "enclosed a word by singlequote
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 "enclosed a word by doublequote
@@ -143,7 +145,9 @@ filetype plugin indent on
 
 set background=dark
 colorscheme hybrid
+syntax on
 highlight LineNr ctermfg=grey
+highlight NonText ctermfg=4
 "}}}
 "
 "Plugins settings{{{

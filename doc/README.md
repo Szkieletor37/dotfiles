@@ -1,3 +1,6 @@
 `visudo`でsudoのpasswdを省略できるようにする
 Neovimの設定をする
+gitのユーザ名とpasswdを設定する
+gitとssh接続する
+
 
