@@ -17,6 +17,7 @@ alias ls='ls -a $LS_OPTIONS'
 
 alias rm='rm -i'
 alias vim='/usr/local/bin/vim'
+alias clang-format='clang-format-7'
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
@@ -58,7 +59,7 @@ if zplug check "bhilburn/powerlevel9k"; then
 	POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 	POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
 	POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='$ '
-	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+	POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs virtualenv)
 	POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status time root_indicator)
 #	POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\ue0b4'
 #	POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\ue0b6'

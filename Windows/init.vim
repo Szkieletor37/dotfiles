@@ -17,6 +17,7 @@ set listchars=tab:»\ ,trail:-,eol:↲,extends:»,precedes:«
 set list
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
 "------------------------}}}
 "Search-------------------------{{{
@@ -154,6 +155,10 @@ highlight NonText ctermfg=4
 "ale{{{
 let g:ale_linters = {
 \ 'php' : ['phan'],
+\ 'cpp' : ['gcc'],
+\}
+let g:ale_fixers = {
+\ 'cpp' : ['clang-format'],
 \}
 "}}}
 "quickrun{{{
