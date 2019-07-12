@@ -103,3 +103,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #sudo sh -c "echo 'nameserver 8.8.8.8' >> /etc/resolv.conf"
+export DOCKER_HOST=tcp://localhost:2375
