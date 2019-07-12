@@ -1,3 +1,3 @@
-groupadd wheel
+sudo groupadd wheel
 #visudo
-useradd -aG wheel szkieletor
+sudo usermod -aG wheel szkieletor
