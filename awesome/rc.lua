@@ -45,10 +45,10 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/szkieletor/.config/awesome/rc.lua");
+beautiful.init("/home/szkieletor/.config/awesome/theme.lua");
 
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
+terminal = "termite"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
