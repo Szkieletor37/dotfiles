@@ -7,9 +7,9 @@ ssh-keygen -t rsa
 cat id_rsa.pub >> authorized_keys
 rm id_rsa.pub -rf
 
-# Host github 
+# Host github github.com 
 # HostName github.com
-# IdentityFile ~/.ssh/id_rsa
+# IdentityFile ~/.ssh/github_id_rsa
 # User git
 # >> .ssh/config
 
