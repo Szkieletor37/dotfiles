@@ -1,3 +1,5 @@
+# insert for Alacritty 
+cd ~
 
 export TERM="xterm-256color"
 
