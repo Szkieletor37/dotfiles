@@ -9,6 +9,7 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export DISPLAY=localhost
 #export WAYLAND_DISPLAY=alacritty
+export PATH=$PATH:$HOME/.local/bin
 source $HOME/.zplug/init.zsh
 
 alias ls='ls --color=auto'
