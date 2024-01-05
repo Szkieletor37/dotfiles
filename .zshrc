@@ -15,6 +15,7 @@ source $HOME/.zplug/init.zsh
 alias ls='ls --color=auto'
 alias rm='rm -i'
 alias vim='/usr/local/bin/vim'
+alias python='python3'
 
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -101,8 +102,12 @@ fi
 
 zplug load 
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias atc-test='g++ main.cpp && oj test -d "./tests"'
+
 # opam configuration
-test -r /home/szkieletor/.opam/opam-init/init.zsh && . /home/szkieletor/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[[ ! -r /home/szkieletor/.opam/opam-init/init.zsh ]] || source /home/szkieletor/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
