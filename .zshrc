@@ -111,3 +111,13 @@ alias atc-test='g++ main.cpp && oj test -d "./tests"'
 # opam configuration
 [[ ! -r /home/szkieletor/.opam/opam-init/init.zsh ]] || source /home/szkieletor/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
+# ssh-agentが複数起動して毎回ssh-addしないといけないので
+# 複数起動させない
+if [ -f ~/.ssh-agent ]; then
+    . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+    ssh-agent > ~/.ssh-agent
+    . ~/.ssh-agent
+fi
+ssh-add -l >& /dev/null || ssh-add
