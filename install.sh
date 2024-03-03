@@ -13,14 +13,14 @@ success () {
 info 'Installing build-essential...'
 sudo apt install -y build-essential > /dev/null 2> /dev/null
 
-success 'Installed build-essential'
+success 'build-essential'
 
 # install and setup zsh
 info 'Installing and setup zsh...'
 sudo apt install -y zsh > /dev/null 2> /dev/null
 sudo chsh $(whoami) -s $(which zsh)
 
-success 'Installed and setup zsh'
+success 'zsh'
 
 # setup git
 info 'Setting up git...'
