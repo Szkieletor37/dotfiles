@@ -7,4 +7,4 @@ sudo apt install -y build-essential
 # install and setup zsh
 printf "Installing zsh...\n"
 sudo apt install -y zsh
-chsh -s $(which zsh)
+sudo chsh $(whoami) -s $(which zsh)
