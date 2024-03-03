@@ -16,10 +16,8 @@ sudo apt install -y build-essential > /dev/null 2> /dev/null
 success 'Installed build-essential'
 
 # install and setup zsh
-info 'Installing zsh...'
+info 'Installing and setup zsh...'
 sudo apt install -y zsh > /dev/null 2> /dev/null
-
-info 'setup zsh...'
 sudo chsh $(whoami) -s $(which zsh)
 
 success 'Installed and setup zsh'
