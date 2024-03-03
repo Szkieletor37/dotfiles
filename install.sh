@@ -11,13 +11,13 @@ success () {
 
 # install build-essential
 info 'Installing build-essential...'
-sudo apt install -y build-essential > /dev/null
+sudo apt install -y build-essential > /dev/null 2> /dev/null
 
 success 'Installed build-essential'
 
 # install and setup zsh
 info 'Installing zsh...'
-sudo apt install -y zsh > /dev/null
+sudo apt install -y zsh > /dev/null 2> /dev/null
 
 info 'setup zsh...'
 sudo chsh $(whoami) -s $(which zsh)
