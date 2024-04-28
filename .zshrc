@@ -121,3 +121,10 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
     . ~/.ssh-agent
 fi
 ssh-add -l >& /dev/null || ssh-add
+
+# wsl
+# Win側のブラウザを起動
+BROWSER="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
+
+# pyenv
+eval "$(pyenv virtualenv-init -)"
