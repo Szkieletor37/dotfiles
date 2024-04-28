@@ -127,4 +127,6 @@ ssh-add -l >& /dev/null || ssh-add
 BROWSER="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
 
 # pyenv
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
